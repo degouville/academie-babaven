@@ -145,7 +145,7 @@ export default function Home() {
           <div className="pain-card rv">
             <div className="pain-card-icon"><i data-lucide="alert-circle" className="icon icon-2xl icon-red"></i></div>
             <h3>Tu te sens dépassé·e</h3>
-            <p>ChatGPT, Claude, Midjourney, n8n... Les outils sortent plus vite que tu ne peux les tester. Tu ne sais pas lequel choisir, ni par où commencer. Résultat : tu stagnes pendant que d'autres avancent.</p>
+            <p>ChatGPT, Claude, Claude Code, Google AI, Gemini... Les outils sortent plus vite que tu ne peux les tester. Tu ne sais pas lequel choisir, ni par où commencer. Résultat : tu stagnes pendant que d'autres avancent.</p>
           </div>
           <div className="pain-card rv">
             <div className="pain-card-icon"><i data-lucide="clock" className="icon icon-2xl" style={{color:'#f59e0b'}}></i></div>
@@ -227,8 +227,8 @@ export default function Home() {
           <div className="outils-track">
             <div className="outil-item"><img src="logos-ia/chatgpt-icon-svg-download-png-7576880.webp" alt="ChatGPT" /><span>ChatGPT</span></div>
             <div className="outil-item"><img src="logos-ia/claude.svg" alt="Claude" /><span>Claude</span></div>
-            <div className="outil-item"><i data-lucide="palette" className="icon icon-lg" style={{color:'#ec4899'}}></i><span>Midjourney</span></div>
-            <div className="outil-item"><img src="logos-ia/n8n.png" alt="n8n" /><span>n8n</span></div>
+            <div className="outil-item"><img src="logos-ia/Google_Gemini_icon_2025.svg.png" alt="Google AI" /><span>Google AI</span></div>
+            <div className="outil-item"><i data-lucide="terminal" className="icon icon-lg" style={{color:'#d97706'}}></i><span>Claude Code</span></div>
             <div className="outil-item"><img src="logos-ia/Elevenlabs-Ai-Logo-PNG-SVG-Vector.png" alt="ElevenLabs" /><span>ElevenLabs</span></div>
             <div className="outil-item"><img src="logos-ia/lovable-ai-icon.webp" alt="Lovable" /><span>Lovable</span></div>
             <div className="outil-item"><img src="logos-ia/perplexity-icon-logo-png_seeklogo-619417.png" alt="Perplexity" /><span>Perplexity</span></div>
@@ -238,8 +238,8 @@ export default function Home() {
             {/* Duplicate for seamless loop */}
             <div className="outil-item"><img src="logos-ia/chatgpt-icon-svg-download-png-7576880.webp" alt="ChatGPT" /><span>ChatGPT</span></div>
             <div className="outil-item"><img src="logos-ia/claude.svg" alt="Claude" /><span>Claude</span></div>
-            <div className="outil-item"><i data-lucide="palette" className="icon icon-lg" style={{color:'#ec4899'}}></i><span>Midjourney</span></div>
-            <div className="outil-item"><img src="logos-ia/n8n.png" alt="n8n" /><span>n8n</span></div>
+            <div className="outil-item"><img src="logos-ia/Google_Gemini_icon_2025.svg.png" alt="Google AI" /><span>Google AI</span></div>
+            <div className="outil-item"><i data-lucide="terminal" className="icon icon-lg" style={{color:'#d97706'}}></i><span>Claude Code</span></div>
             <div className="outil-item"><img src="logos-ia/Elevenlabs-Ai-Logo-PNG-SVG-Vector.png" alt="ElevenLabs" /><span>ElevenLabs</span></div>
             <div className="outil-item"><img src="logos-ia/lovable-ai-icon.webp" alt="Lovable" /><span>Lovable</span></div>
             <div className="outil-item"><img src="logos-ia/perplexity-icon-logo-png_seeklogo-619417.png" alt="Perplexity" /><span>Perplexity</span></div>
@@ -304,8 +304,8 @@ export default function Home() {
           <div className="cours-thumb" style={{background:'linear-gradient(180deg, #6366f1, #8b5cf6)',display:'flex',alignItems:'center',justifyContent:'center',color:'white',fontSize:'32px'}}><i data-lucide="bot" className="icon icon-xl icon-white"></i></div>
           <div className="cours-info">
             <span className="cours-category">Automatisation</span>
-            <h3 className="cours-title">Automatisation avec n8n</h3>
-            <p className="cours-desc">Connecte tes apps et automatise tes workflows sans coder. De débutant à avancé.</p>
+            <h3 className="cours-title">Automatisation avec Claude Code</h3>
+            <p className="cours-desc">Automatise tes workflows et génère du code avec l'IA. De débutant à avancé.</p>
           </div>
           <div className="cours-status">
             <span className="status-badge status-soon">Bientôt</span>
@@ -317,7 +317,7 @@ export default function Home() {
           <div className="cours-thumb" style={{background:'linear-gradient(180deg, #10b981, #059669)',display:'flex',alignItems:'center',justifyContent:'center',color:'white',fontSize:'32px'}}><i data-lucide="palette" className="icon icon-xl icon-white"></i></div>
           <div className="cours-info">
             <span className="cours-category">Design</span>
-            <h3 className="cours-title">Midjourney & DALL-E Masterclass</h3>
+            <h3 className="cours-title">Google AI & Gemini Masterclass</h3>
             <p className="cours-desc">Crée des images professionnelles pour ta marque, tes produits et tes réseaux sociaux.</p>
           </div>
           <div className="cours-status">
@@ -391,7 +391,7 @@ export default function Home() {
             <div className="programme-num">6</div>
             <div className="programme-content">
               <h3>Automatisation no-code</h3>
-              <p>Connecte tes outils avec n8n et Zapier pour un business qui tourne seul.</p>
+              <p>Connecte tes outils avec Claude Code et Zapier pour un business qui tourne seul.</p>
             </div>
           </div>
           <div className="programme-item upcoming">

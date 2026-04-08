@@ -1,5 +1,3 @@
-import ScrollStack, { ScrollStackItem } from './components/ScrollStack'
-
 export default function Home() {
   return (
     <>
@@ -141,28 +139,28 @@ export default function Home() {
       <div className="urgence-grid">
         <div className="urgence-title rv">
           L'IA transforme le monde.<br />
-          <span className="serif">Et toi, tu attendes quoi ?</span>
+          <span className="serif">Et toi, tu attends quoi ?</span>
         </div>
         <div className="pain-points stagger-container">
           <div className="pain-card rv">
             <div className="pain-card-icon"><i data-lucide="alert-circle" className="icon icon-2xl icon-red"></i></div>
-            <h3>Tu te sens dépassé(e)</h3>
-            <p>Tous les jours, de nouveaux outils sortent. Tu ne sais pas lequel choisir ni par où commencer. Tu perds des heures à tester sans résultat.</p>
+            <h3>Tu te sens dépassé·e</h3>
+            <p>ChatGPT, Claude, Midjourney, n8n... Les outils sortent plus vite que tu ne peux les tester. Tu ne sais pas lequel choisir, ni par où commencer. Résultat : tu stagnes pendant que d'autres avancent.</p>
           </div>
           <div className="pain-card rv">
             <div className="pain-card-icon"><i data-lucide="clock" className="icon icon-2xl" style={{color:'#f59e0b'}}></i></div>
             <h3>Tu manques de temps</h3>
-            <p>Tu passes des journées entières sur des tâches répétitives. Créer du contenu, répondre aux mails, gérer ton business... ça ne s'arrête jamais.</p>
+            <p>Tes journées disparaissent dans des tâches qui ne rapportent rien. Contenu, mails, admin... Tu travailles 10h pour des résultats de 3h. Et ton vrai business ? Il attend.</p>
           </div>
           <div className="pain-card rv">
             <div className="pain-card-icon"><i data-lucide="frown" className="icon icon-2xl" style={{color:'#6366f1'}}></i></div>
-            <h3>Tu n'es pas visible</h3>
-            <p>Ta concurrence explose sur les réseaux avec du contenu généré par IA, pendant que toi tu galères à poster une fois par semaine.</p>
+            <h3>Tu n'es pas assez visible</h3>
+            <p>Ta concurrence publie 3 posts par jour sans effort. Toi ? Tu galères à en sortir 3 par semaine. Ils prennent ta place. Tes clients te trouvent de moins en moins.</p>
           </div>
           <div className="pain-card rv">
             <div className="pain-card-icon"><i data-lucide="wallet" className="icon icon-2xl" style={{color:'#10b981'}}></i></div>
             <h3>Tu laisses de l'argent sur la table</h3>
-            <p>Sans automatisation, tu ne peux pas scaler. Chaque nouveau client signifie plus de travail, pas plus de revenus.</p>
+            <p>Chaque nouveau client = plus de travail, pas plus de revenus. Sans automatisation, tu as créé un job, pas un business. Tu es coincé·e dans des tâches que l'IA pourrait faire à ta place.</p>
           </div>
         </div>
       </div>
@@ -173,54 +171,54 @@ export default function Home() {
   <section className="benefices-section" id="benefices">
     <div className="container">
       <div className="section-header rv">
-        <span className="section-label">Pourquoi nous rejoindre</span>
-        <h2 className="section-title">Ce que tu vas maîtriser <span className="serif">en quelques semaines</span></h2>
+        <span className="section-label">Ce qui t'attend</span>
+        <h2 className="section-title">Ce que tu vas accomplir <span className="serif">dès les premières semaines</span></h2>
       </div>
 
-      <ScrollStack useWindowScroll={true} baseScale={0.88} className="mb-20">
-        <ScrollStackItem itemClassName="bg-white">
+      <div className="benefices-grid stagger-container">
+        <div className="benefice-card rv">
           <span className="benefice-number">01</span>
           <div className="benefice-icon"><i data-lucide="zap" className="icon icon-2xl icon-white"></i></div>
           <h3>Créer 10× plus vite</h3>
-          <p>Maîtrise les outils de génération de contenu pour produire en 1 heure ce qui prenait 1 journée.</p>
-          <div className="benefice-result">→ Économie de 15h/semaine</div>
-        </ScrollStackItem>
-        <ScrollStackItem itemClassName="bg-white">
+          <p>Termine en 1 heure ce qui te prenait 1 journée entière. Emails, posts, scripts vidéo : l'IA devient ton assistant infatigable.</p>
+          <div className="benefice-result">→ 15 heures récupérées chaque semaine</div>
+        </div>
+        <div className="benefice-card rv">
           <span className="benefice-number">02</span>
           <div className="benefice-icon"><i data-lucide="bot" className="icon icon-2xl icon-white"></i></div>
           <h3>Automatiser tes tâches</h3>
-          <p>Connecte tes outils avec n8n et d'autres plateformes no-code pour un business qui tourne 24/7.</p>
-          <div className="benefice-result">→ Plus de tâches répétitives</div>
-        </ScrollStackItem>
-        <ScrollStackItem itemClassName="bg-white">
+          <p>Emails, factures, relances : ton business tourne pendant que tu dors. Les outils no-code font le travail à ta place, sans coder une seule ligne.</p>
+          <div className="benefice-result">→ Fini les tâches répétitives</div>
+        </div>
+        <div className="benefice-card rv">
           <span className="benefice-number">03</span>
           <div className="benefice-icon"><i data-lucide="palette" className="icon icon-2xl icon-white"></i></div>
           <h3>Créer des visuels pro</h3>
-          <p>Génère des images, logos et visuels de marque sans compétences design avec Midjourney et Canva IA.</p>
-          <div className="benefice-result">→ -80% de coûts design</div>
-        </ScrollStackItem>
-        <ScrollStackItem itemClassName="bg-white">
+          <p>Logos, miniatures, posts Instagram : tu crées des visuels dignes d'un designer en quelques minutes, sans compétences techniques.</p>
+          <div className="benefice-result">→ -80% sur tes coûts design</div>
+        </div>
+        <div className="benefice-card rv">
           <span className="benefice-number">04</span>
           <div className="benefice-icon"><i data-lucide="video" className="icon icon-2xl icon-white"></i></div>
           <h3>Produire des vidéos</h3>
-          <p>Monte, édite et génère des vidéos avec l'IA. Crée du Reels/TikTok en quelques minutes.</p>
-          <div className="benefice-result">→ +300% d'engagement</div>
-        </ScrollStackItem>
-        <ScrollStackItem itemClassName="bg-white">
+          <p>Montage auto, voix-off générée, sous-titres en 1 clic. Tu publies du contenu vidéo quotidien sans passer la journée devant un logiciel.</p>
+          <div className="benefice-result">→ 3× plus d'engagement</div>
+        </div>
+        <div className="benefice-card rv">
           <span className="benefice-number">05</span>
           <div className="benefice-icon"><i data-lucide="file-text" className="icon icon-2xl icon-white"></i></div>
           <h3>Maîtriser les prompts</h3>
-          <p>Apprends à parler aux IA pour obtenir des résultats exceptionnels à chaque utilisation.</p>
-          <div className="benefice-result">→ Résultats 5× meilleurs</div>
-        </ScrollStackItem>
-        <ScrollStackItem itemClassName="bg-white">
+          <p>La méthode CORT : tu apprends à "parler" à l'IA pour obtenir des résultats exceptionnels du premier coup, sans frustration.</p>
+          <div className="benefice-result">→ 5× meilleurs résultats</div>
+        </div>
+        <div className="benefice-card rv">
           <span className="benefice-number">06</span>
           <div className="benefice-icon"><i data-lucide="rocket" className="icon icon-2xl icon-white"></i></div>
           <h3>Développer ton business</h3>
-          <p>Utilise l'IA pour analyser tes données, générer des leads et scaler sans burnout.</p>
-          <div className="benefice-result">→ +40% de revenus</div>
-        </ScrollStackItem>
-      </ScrollStack>
+          <p>Analyse tes données, génère des leads qualifiés, scale sans recruter. Tu passes de solopreneur à entrepreneur avec des systèmes qui grandissent avec toi.</p>
+          <div className="benefice-result">→ +40% de revenus en moyenne</div>
+        </div>
+      </div>
 
       {/* Outils IA Marquee */}
       <div className="outils-marquee rv">
@@ -259,7 +257,7 @@ export default function Home() {
     <div className="container">
       <div className="section-header rv">
         <span className="section-label">Formation continue</span>
-        <h2 className="section-title">Les cours <span className="serif">disponibles maintenant</span></h2>
+        <h2 className="section-title">Les formations <span className="serif">à ta disposition</span></h2>
       </div>
 
       <div className="cours-list stagger-container">
@@ -267,8 +265,8 @@ export default function Home() {
           <img src="cours/Cr%C3%A9e%CC%81%20ta%20thumbnail.png" alt="Crée ta thumbnail" className="cours-thumb" />
           <div className="cours-info">
             <span className="cours-category">Création de contenu</span>
-            <h3 className="cours-title">Crée ta thumbnail avec l'IA</h3>
-            <p className="cours-desc">Apprends à créer des miniatures YouTube et réseaux qui cliquent, sans compétences design.</p>
+            <h3 className="cours-title">Crée tes miniatures avec l'IA</h3>
+            <p className="cours-desc">Des miniatures YouTube et réseaux qui font cliquer, sans jamais ouvrir Photoshop. Même si tu n'as aucun talent graphique.</p>
           </div>
           <div className="cours-status">
             <span className="status-badge status-available">Disponible</span>
@@ -281,7 +279,7 @@ export default function Home() {
           <div className="cours-info">
             <span className="cours-category">Fondamentaux</span>
             <h3 className="cours-title">Prompt Engineering Mastery</h3>
-            <p className="cours-desc">La méthode CORT pour obtenir des résultats exceptionnels de ChatGPT et Claude.</p>
+            <p className="cours-desc">La méthode CORT : obtiens des résultats professionnels de ChatGPT et Claude dès ta première utilisation. Fini les réponses médiocres.</p>
           </div>
           <div className="cours-status">
             <span className="status-badge status-available">Disponible</span>
@@ -456,7 +454,7 @@ export default function Home() {
         <div className="compare-col sans">
           <div className="compare-header">
             <h3><i data-lucide="x-circle" className="icon icon-lg" style={{color:'var(--red)',display:'inline-flex',verticalAlign:'middle',marginRight:'8px'}}></i> Sans Babaven</h3>
-            <p>Tu apprends seul(e)</p>
+            <p>Tu apprends seul·e</p>
           </div>
           <div className="compare-list stagger-container">
             <div className="compare-item rv">
@@ -473,7 +471,7 @@ export default function Home() {
             </div>
             <div className="compare-item">
               <div className="compare-icon"><i data-lucide="x" className="icon icon-md" style={{color:'var(--red)'}}></i></div>
-              <span>Tu restes bloqué(e) sur les bugs</span>
+              <span>Tu restes bloqué·e sur les bugs</span>
             </div>
             <div className="compare-item">
               <div className="compare-icon"><i data-lucide="x" className="icon icon-md" style={{color:'var(--red)'}}></i></div>
@@ -636,8 +634,8 @@ export default function Home() {
           <p className="formatrice-bio">
             Experte en IA générative et fondatrice de Babaven Media. J'accompagne depuis 3 ans
             les entrepreneurs francophones à maîtriser l'IA pour scaler leur business.
-            Mon approche ? Pédagogique, concrète et 100% actionnable.
-            Pas de théorie inutile, que des résultats.
+            Ma méthode ? Zéro théorie, 100% action. Tu repars avec des compétences utilisables
+            dès aujourd'hui, pas dans 6 mois.
           </p>
           <div className="formatrice-tags">
             <span className="formatrice-tag"><i data-lucide="graduation-cap" className="icon icon-sm" style={{display:'inline-flex',verticalAlign:'middle',marginRight:'4px'}}></i> 500+ entrepreneurs formés</span>
@@ -657,7 +655,7 @@ export default function Home() {
             </div>
             <div className="credential">
               <div className="credential-icon"><i data-lucide="check" className="icon icon-sm" style={{color:'#10b981'}}></i></div>
-              <span>Partenaire officielle OpenAI & Anthropic</span>
+              <span>Partenaire officiel OpenAI & Anthropic</span>
             </div>
             <div className="credential">
               <div className="credential-icon"><i data-lucide="check" className="icon icon-sm" style={{color:'#10b981'}}></i></div>

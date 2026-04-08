@@ -145,7 +145,7 @@ export default function ClientEffects() {
     })
 
     // ========== 3D CARD TILT ==========
-    document.querySelectorAll('.temoignage-card').forEach(card => {
+    document.querySelectorAll('.benefice-card, .temoignage-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const el = card as HTMLElement
         const rect = el.getBoundingClientRect()

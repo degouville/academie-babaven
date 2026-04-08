@@ -51,6 +51,42 @@ export default function ClientEffects() {
       link.addEventListener('click', () => mobileMenu.classList.remove('open'))
     })
 
+    // ========== HERO IMAGES — FLOAT + PARALLAX ==========
+    const heroImgMain = document.querySelector('.hero-img-main') as HTMLElement | null
+    const heroFloat1  = document.querySelector('.hero-img-float-1') as HTMLElement | null
+    const heroFloat2  = document.querySelector('.hero-img-float-2') as HTMLElement | null
+
+    let heroMouseX = 0, heroMouseY = 0, heroSmX = 0, heroSmY = 0
+    let heroImgRaf: number
+
+    const onHeroMouse = (e: MouseEvent) => {
+      heroMouseX = e.clientX / window.innerWidth - 0.5
+      heroMouseY = e.clientY / window.innerHeight - 0.5
+    }
+    document.addEventListener('mousemove', onHeroMouse)
+
+    const animateHeroImages = () => {
+      heroSmX += (heroMouseX - heroSmX) * 0.04
+      heroSmY += (heroMouseY - heroSmY) * 0.04
+      const t = performance.now() / 1000
+
+      if (heroImgMain) {
+        const fy = Math.sin(t * 0.55) * 8
+        heroImgMain.style.transform = `translate(${heroSmX * 12}px, ${fy + heroSmY * 8}px)`
+      }
+      if (heroFloat1) {
+        const fy = Math.sin(t * 0.8 + 1.0) * 10
+        heroFloat1.style.transform = `translate(${-heroSmX * 22}px, ${fy - heroSmY * 16}px)`
+      }
+      if (heroFloat2) {
+        const fy = Math.sin(t * 0.65 + 2.5) * 12
+        heroFloat2.style.transform = `translate(${heroSmX * 28}px, ${fy + heroSmY * 20}px)`
+      }
+
+      heroImgRaf = requestAnimationFrame(animateHeroImages)
+    }
+    animateHeroImages()
+
     // ========== HERO BLOB PARALLAX ==========
     const heroBlob = document.getElementById('heroBlob')
     let mouseX = 0, mouseY = 0, blobX = 0, blobY = 0
@@ -173,7 +209,9 @@ export default function ClientEffects() {
       window.removeEventListener('scroll', onNavScroll)
       window.removeEventListener('scroll', onCtaScroll)
       document.removeEventListener('mousemove', onMouseMove)
+      document.removeEventListener('mousemove', onHeroMouse)
       cancelAnimationFrame(rafId)
+      cancelAnimationFrame(heroImgRaf)
       rvObserver.disconnect()
       counterObserver.disconnect()
     }

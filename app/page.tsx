@@ -1,3 +1,5 @@
+import ScrollStack, { ScrollStackItem } from './components/ScrollStack'
+
 export default function Home() {
   return (
     <>
@@ -175,50 +177,50 @@ export default function Home() {
         <h2 className="section-title">Ce que tu vas maîtriser <span className="serif">en quelques semaines</span></h2>
       </div>
 
-      <div className="benefices-grid stagger-container">
-        <div className="benefice-card rv">
+      <ScrollStack useWindowScroll={true} baseScale={0.88} className="mb-20">
+        <ScrollStackItem itemClassName="bg-white">
           <span className="benefice-number">01</span>
           <div className="benefice-icon"><i data-lucide="zap" className="icon icon-2xl icon-white"></i></div>
           <h3>Créer 10× plus vite</h3>
           <p>Maîtrise les outils de génération de contenu pour produire en 1 heure ce qui prenait 1 journée.</p>
           <div className="benefice-result">→ Économie de 15h/semaine</div>
-        </div>
-        <div className="benefice-card rv">
+        </ScrollStackItem>
+        <ScrollStackItem itemClassName="bg-white">
           <span className="benefice-number">02</span>
           <div className="benefice-icon"><i data-lucide="bot" className="icon icon-2xl icon-white"></i></div>
           <h3>Automatiser tes tâches</h3>
           <p>Connecte tes outils avec n8n et d'autres plateformes no-code pour un business qui tourne 24/7.</p>
           <div className="benefice-result">→ Plus de tâches répétitives</div>
-        </div>
-        <div className="benefice-card rv">
+        </ScrollStackItem>
+        <ScrollStackItem itemClassName="bg-white">
           <span className="benefice-number">03</span>
           <div className="benefice-icon"><i data-lucide="palette" className="icon icon-2xl icon-white"></i></div>
           <h3>Créer des visuels pro</h3>
           <p>Génère des images, logos et visuels de marque sans compétences design avec Midjourney et Canva IA.</p>
           <div className="benefice-result">→ -80% de coûts design</div>
-        </div>
-        <div className="benefice-card rv">
+        </ScrollStackItem>
+        <ScrollStackItem itemClassName="bg-white">
           <span className="benefice-number">04</span>
           <div className="benefice-icon"><i data-lucide="video" className="icon icon-2xl icon-white"></i></div>
           <h3>Produire des vidéos</h3>
           <p>Monte, édite et génère des vidéos avec l'IA. Crée du Reels/TikTok en quelques minutes.</p>
           <div className="benefice-result">→ +300% d'engagement</div>
-        </div>
-        <div className="benefice-card rv">
+        </ScrollStackItem>
+        <ScrollStackItem itemClassName="bg-white">
           <span className="benefice-number">05</span>
           <div className="benefice-icon"><i data-lucide="file-text" className="icon icon-2xl icon-white"></i></div>
           <h3>Maîtriser les prompts</h3>
           <p>Apprends à parler aux IA pour obtenir des résultats exceptionnels à chaque utilisation.</p>
           <div className="benefice-result">→ Résultats 5× meilleurs</div>
-        </div>
-        <div className="benefice-card rv">
+        </ScrollStackItem>
+        <ScrollStackItem itemClassName="bg-white">
           <span className="benefice-number">06</span>
           <div className="benefice-icon"><i data-lucide="rocket" className="icon icon-2xl icon-white"></i></div>
           <h3>Développer ton business</h3>
           <p>Utilise l'IA pour analyser tes données, générer des leads et scaler sans burnout.</p>
           <div className="benefice-result">→ +40% de revenus</div>
-        </div>
-      </div>
+        </ScrollStackItem>
+      </ScrollStack>
 
       {/* Outils IA Marquee */}
       <div className="outils-marquee rv">

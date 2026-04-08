@@ -458,6 +458,50 @@
       font-weight: 500;
     }
 
+    /* ========== HERO VISUAL ========== */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-img-main {
+      width: 100%;
+      border-radius: 20px;
+      display: block;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+
+    .hero-img-float {
+      position: absolute;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+    }
+
+    .hero-img-float img {
+      display: block;
+      width: 100%;
+    }
+
+    .hero-img-float-1 {
+      width: 160px;
+      bottom: -20px;
+      left: -24px;
+    }
+
+    .hero-img-float-2 {
+      width: 180px;
+      top: -20px;
+      right: -24px;
+    }
+
     /* ========== LOGOS MARQUEE ========== */
     .logos-section {
       padding: 60px 0;
@@ -1303,6 +1347,15 @@
       color: var(--white);
       font-weight: 700;
       font-size: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .temoignage-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
 
     .temoignage-info h4 {
@@ -1382,6 +1435,14 @@
       font-size: 48px;
       font-weight: 700;
       margin: 0 auto 24px;
+      overflow: hidden;
+    }
+
+    .formatrice-avatar-large img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
 
     .formatrice-quote {
@@ -1798,6 +1859,14 @@
 
       .hero {
         padding: 100px 0 60px;
+      }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        display: none;
       }
 
       .hero-cta {

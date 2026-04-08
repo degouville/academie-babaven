@@ -60,6 +60,7 @@ export default function Home() {
   <section className="hero" id="hero">
     <div className="hero-blob" id="heroBlob"></div>
     <div className="container">
+      <div className="hero-layout">
       <div className="hero-content">
         <div className="hero-badge">1ère académie IA · 100% francophone</div>
         <h1>
@@ -99,6 +100,16 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="hero-visual">
+        <img src="/images/etudiants-coworking.png" alt="Entrepreneurs en formation IA" className="hero-img-main" />
+        <div className="hero-img-float hero-img-float-1">
+          <img src="/images/claude-app.png" alt="Claude AI" />
+        </div>
+        <div className="hero-img-float hero-img-float-2">
+          <img src="/images/claude-code-terminal.png" alt="Claude Code" />
+        </div>
+      </div>
       </div>
     </div>
   </section>
@@ -589,7 +600,7 @@ export default function Home() {
           <div className="stars"><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i></div>
           <p className="temoignage-quote">"J'ai doublé ma productivité en 2 semaines. Ce qui me prenait 1 journée, je le fais maintenant en 1 heure avec les prompts que j'ai appris."</p>
           <div className="temoignage-author">
-            <div className="temoignage-avatar">ML</div>
+            <div className="temoignage-avatar"><img src="/images/portrait-temoignage-2.png" alt="Marie L." /></div>
             <div className="temoignage-info">
               <h4>Marie L.</h4>
               <p>Freelance Marketing, Martinique</p>
@@ -613,7 +624,7 @@ export default function Home() {
           <div className="stars"><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i><i data-lucide="star" className="icon icon-sm icon-gold" style={{display:'inline-flex'}}></i></div>
           <p className="temoignage-quote">"La communauté vaut à elle seule l'abonnement. Pouvoir échanger avec d'autres entrepreneurs francophones, c'est précieux."</p>
           <div className="temoignage-author">
-            <div className="temoignage-avatar">SB</div>
+            <div className="temoignage-avatar"><img src="/images/portrait-temoignage-1.png" alt="Sophie B." /></div>
             <div className="temoignage-info">
               <h4>Sophie B.</h4>
               <p>Créatrice de contenu, Côte d'Ivoire</p>
@@ -645,7 +656,7 @@ export default function Home() {
         </div>
 
         <div className="formatrice-card rv">
-          <div className="formatrice-avatar-large">B</div>
+          <div className="formatrice-avatar-large"><img src="/images/barbara-de-la-cruz.png" alt="Barbara De La Cruz" /></div>
           <p className="formatrice-quote">"L'IA n'est pas le futur, c'est le présent. Mon mission : faire de toi un entrepreneur 10× plus productif."</p>
           <div className="formatrice-credentials">
             <div className="credential">
@@ -660,6 +671,47 @@ export default function Home() {
               <div className="credential-icon"><i data-lucide="check" className="icon icon-sm" style={{color:'#10b981'}}></i></div>
               <span>Intervenante Entrepreneurs d'Outre-Mer</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {/* Formateur Section - Mathieu */}
+  <section className="formatrice-section" id="formateur" style={{background:'var(--bg)'}}>
+    <div className="container">
+      <div className="formatrice-grid">
+        <div className="formatrice-card rv">
+          <div className="formatrice-avatar-large"><img src="/images/mathieu-de-gouville.png" alt="Mathieu de Gouville" /></div>
+          <p className="formatrice-quote">&quot;L&apos;IA change les règles du jeu. Avec les bons outils et la bonne méthode, n&apos;importe quel entrepreneur peut devenir 10× plus efficace.&quot;</p>
+          <div className="formatrice-credentials">
+            <div className="credential">
+              <div className="credential-icon"><i data-lucide="check" className="icon icon-sm" style={{color:'#10b981'}}></i></div>
+              <span>Expert en automatisation IA</span>
+            </div>
+            <div className="credential">
+              <div className="credential-icon"><i data-lucide="check" className="icon icon-sm" style={{color:'#10b981'}}></i></div>
+              <span>Co-fondateur Babaven Media</span>
+            </div>
+            <div className="credential">
+              <div className="credential-icon"><i data-lucide="check" className="icon icon-sm" style={{color:'#10b981'}}></i></div>
+              <span>Spécialiste Claude Code &amp; Google AI</span>
+            </div>
+          </div>
+        </div>
+        <div className="formatrice-content rv">
+          <h2>Ton formateur : <span className="serif">Mathieu de Gouville</span></h2>
+          <p className="formatrice-bio">
+            Co-fondateur de Babaven Media et expert en systèmes d&apos;automatisation par l&apos;IA.
+            Mathieu t&apos;enseigne comment connecter les outils IA entre eux pour créer des workflows
+            qui font tourner ton business 24h/24 — sans coder, sans expertise technique.
+          </p>
+          <div className="formatrice-tags">
+            <span className="formatrice-tag"><i data-lucide="cpu" className="icon icon-sm" style={{display:'inline-flex',verticalAlign:'middle',marginRight:'4px'}}></i> Automatisation no-code</span>
+            <span className="formatrice-tag"><i data-lucide="layers" className="icon icon-sm" style={{display:'inline-flex',verticalAlign:'middle',marginRight:'4px'}}></i> Workflows IA avancés</span>
+            <span className="formatrice-tag"><i data-lucide="trending-up" className="icon icon-sm" style={{display:'inline-flex',verticalAlign:'middle',marginRight:'4px'}}></i> Growth &amp; Scaling</span>
+            <span className="formatrice-tag"><i data-lucide="code-2" className="icon icon-sm" style={{display:'inline-flex',verticalAlign:'middle',marginRight:'4px'}}></i> Claude Code Expert</span>
           </div>
         </div>
       </div>

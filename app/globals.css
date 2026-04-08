@@ -545,8 +545,8 @@
       padding: 28px;
       background: var(--bg);
       border-radius: 16px;
-      border-left: 3px solid transparent;
-      transition: all 0.3s var(--ease-out-expo);
+      border-bottom: 3px solid transparent;
+      transition: box-shadow 0.3s var(--ease-out-expo), transform 0.3s var(--ease-out-expo);
       position: relative;
       overflow: hidden;
     }
@@ -554,20 +554,29 @@
     .pain-card::before {
       content: '';
       position: absolute;
+      bottom: 0;
       left: 0;
-      top: 0;
-      width: 3px;
-      height: 0;
+      height: 3px;
+      width: 0;
       background: var(--red);
-      transition: height 0.4s var(--ease-out-expo);
+      transition: width 0.4s var(--ease-out-expo);
     }
 
     .pain-card:hover::before {
-      height: 100%;
+      width: 100%;
     }
 
     .pain-card:hover {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Hover effect on child to avoid conflict with entrance animation */
+    .pain-card > * {
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+
+    .pain-card:hover > * {
+      transform: translateY(-2px);
     }
 
     .pain-card-icon {
@@ -635,12 +644,20 @@
       padding: 32px;
       border-radius: 16px;
       position: relative;
-      transition: all 0.3s var(--ease-out-expo);
+      transition: box-shadow 0.3s var(--ease-out-expo);
     }
 
     .benefice-card:hover {
-      transform: translateY(-4px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Hover effect on child to avoid conflict with entrance animation */
+    .benefice-card > * {
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+
+    .benefice-card:hover > * {
+      transform: translateY(-4px);
     }
 
     .benefice-number {
@@ -754,7 +771,7 @@
       border-radius: 16px;
       position: relative;
       overflow: hidden;
-      transition: all 0.3s var(--ease-out-expo);
+      transition: background 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
       cursor: pointer;
     }
 
@@ -861,7 +878,7 @@
       padding: 24px;
       background: var(--white);
       border-radius: 16px;
-      transition: all 0.3s;
+      transition: box-shadow 0.3s;
     }
 
     .programme-item.upcoming {
@@ -1122,22 +1139,33 @@
       border-radius: 24px;
       padding: 40px;
       position: relative;
-      transition: all 0.4s var(--ease-out-expo);
+      transition: box-shadow 0.4s var(--ease-out-expo);
       border: 2px solid transparent;
     }
 
     .pricing-card.featured {
       border-color: var(--red);
-      transform: scale(1.02);
     }
 
     .pricing-card:hover {
-      transform: translateY(-4px);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     }
 
-    .pricing-card.featured:hover {
-      transform: scale(1.02) translateY(-4px);
+    /* Hover effect on child to avoid conflict with entrance animation */
+    .pricing-card > * {
+      transition: transform 0.4s var(--ease-out-expo);
+    }
+
+    .pricing-card:hover > * {
+      transform: translateY(-4px);
+    }
+
+    .pricing-card.featured > * {
+      transform: scale(0.98);
+    }
+
+    .pricing-card.featured:hover > * {
+      transform: scale(0.98) translateY(-4px);
     }
 
     .pricing-badge {
@@ -1225,12 +1253,20 @@
       background: var(--bg);
       border-radius: 16px;
       padding: 32px;
-      transition: all 0.3s var(--ease-out-expo);
+      transition: box-shadow 0.3s var(--ease-out-expo);
     }
 
     .temoignage-card:hover {
-      transform: translateY(-4px);
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+    }
+
+    /* Hover effect on child to avoid conflict with entrance animation */
+    .temoignage-card > * {
+      transition: transform 0.3s var(--ease-out-expo);
+    }
+
+    .temoignage-card:hover > * {
+      transform: translateY(-4px);
     }
 
     .stars {
@@ -1800,11 +1836,11 @@
         justify-content: flex-start;
       }
 
-      .pricing-card.featured {
+      .pricing-card.featured > * {
         transform: none;
       }
 
-      .pricing-card.featured:hover {
+      .pricing-card.featured:hover > * {
         transform: translateY(-8px);
       }
 

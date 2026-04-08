@@ -63,12 +63,11 @@ export default function Home() {
       <div className="hero-content">
         <div className="hero-badge">1ère académie IA · 100% francophone</div>
         <h1>
-          Maîtrise l'<span className="highlight">IA</span> avant que ça soit trop tard
+          Gagne 15 heures par semaine.<br /><span className="highlight">Ou regarde tes concurrents le faire sans toi.</span>
         </h1>
         <p className="hero-subtitle">
           La première formation en français pour entrepreneurs caribéens et africains.
-          Apprends à automatiser ton business, créer du contenu 10× plus vite et dépasser
-          ta concurrence avec la méthode <strong>CORT</strong>.
+          Apprends à automatiser ton business et créer du contenu 10× plus vite.
         </p>
         <div className="hero-cta">
           <a href="https://communaute.babaven.com/checkout/pro" className="btn btn-primary btn-large" target="_blank">

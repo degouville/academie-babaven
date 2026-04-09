@@ -63,10 +63,10 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-center">
       <div className="relative z-10 max-w-[800px]">
         <div className="hero-badge">1ère académie IA · 100% francophone</div>
-        <h1>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-800 leading-tight mb-6 tracking-tight">
           Gagne 15 heures<br /> par semaine.<br /><span className="highlight">Ou regarde tes concurrents le faire sans toi.</span>
         </h1>
-        <p className="text-[clamp(1rem,1.8vw,1.25rem)] text-sub max-w-[600px] mb-10 leading-relaxed">
+        <p className="text-xs sm:text-sm md:text-base text-sub max-w-[600px] mb-10 leading-relaxed">
           La première formation en français pour entrepreneurs caribéens.
           Apprends à automatiser ton business et créer du contenu 10× plus vite.
         </p>

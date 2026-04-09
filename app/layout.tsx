@@ -4,8 +4,15 @@ import './globals.css'
 import ClientEffects from './components/ClientEffects'
 
 export const metadata: Metadata = {
-  title: "Babaven Académie — Maîtrise l'IA avant que ça soit trop tard",
-  description: "La 1ère académie IA 100% francophone. Formations concrètes en français pour entrepreneurs. Méthode CORT exclusive. Dès 24€/mois.",
+  title: "Babaven Académie — Fais en 1 heure ce qui te prenait 1 journée",
+  description: "La 1ère académie IA 100% francophone. Formations concrètes en français pour entrepreneurs caribéens.",
+  openGraph: {
+    title: "Babaven Académie — Fais en 1 heure ce qui te prenait 1 journée",
+    description: "La 1ère académie IA 100% francophone. Formations concrètes en français pour entrepreneurs caribéens.",
+    type: 'website',
+    locale: 'fr_FR',
+    siteName: 'Babaven Académie',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

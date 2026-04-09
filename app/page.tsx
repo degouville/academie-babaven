@@ -692,10 +692,6 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-sub">
                   <div className="size-8 bg-bg rounded-lg flex items-center justify-center text-base"><i data-lucide="check" className="inline-flex items-center justify-center size-4 shrink-0" style={{ color: '#10b981' }}></i></div>
-                  <span>Créateur d&apos;OpenClaw &amp; Employés Virtuels Open Source</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-sub">
-                  <div className="size-8 bg-bg rounded-lg flex items-center justify-center text-base"><i data-lucide="check" className="inline-flex items-center justify-center size-4 shrink-0" style={{ color: '#10b981' }}></i></div>
                   <span>Spécialiste Claude Code &amp; Google AI</span>
                 </div>
               </div>

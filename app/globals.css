@@ -1,4 +1,19 @@
-    /* ========== DESIGN TOKENS ========== */
+@import 'tailwindcss';
+
+@theme {
+  --color-red: #ff1655;
+  --color-red2: #d90f45;
+  --color-blue: #0415F4;
+  --color-ink: #0f0f0f;
+  --color-sub: #555555;
+  --color-muted: #999999;
+  --color-line: #ebebeb;
+  --color-bg: #f7f7f7;
+  --color-bg2: #f0f0f0;
+  --color-cream: #faf8f5;
+}
+
+@layer base {
     :root {
       --red: #ff1655;
       --red2: #d90f45;
@@ -14,39 +29,6 @@
 
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    /* ========== ICON STYLES ========== */
-    .icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1em;
-      height: 1em;
-      flex-shrink: 0;
-    }
-
-    .icon-sm { width: 16px; height: 16px; }
-    .icon-md { width: 20px; height: 20px; }
-    .icon-lg { width: 24px; height: 24px; }
-    .icon-xl { width: 32px; height: 32px; }
-    .icon-2xl { width: 40px; height: 40px; }
-
-    .icon-red { color: var(--red); }
-    .icon-white { color: var(--white); }
-    .icon-muted { color: var(--muted); }
-    .icon-gold { color: #ffb800; }
-
-    /* ========== RESET & BASE ========== */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
     }
 
     body {
@@ -65,7 +47,7 @@
     }
 
     .serif {
-      font-family: 'Instrument Serif', serif;
+      font-family: 'Alegreya', serif;
       font-style: italic;
     }
 
@@ -89,39 +71,8 @@
     ul {
       list-style: none;
     }
+}
 
-    /* ========== UTILITIES ========== */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .flex {
-      display: flex;
-    }
-
-    .items-center {
-      align-items: center;
-    }
-
-    .justify-between {
-      justify-content: space-between;
-    }
-
-    .gap-2 { gap: 8px; }
-    .gap-3 { gap: 12px; }
-    .gap-4 { gap: 16px; }
-    .gap-6 { gap: 24px; }
-    .gap-8 { gap: 32px; }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .w-full {
-      width: 100%;
-    }
 
     /* ========== BUTTONS ========== */
     .btn {
@@ -130,7 +81,7 @@
       justify-content: center;
       gap: 8px;
       padding: 14px 28px;
-      font-size: 15px;
+      font-size: 0.9375rem;
       font-weight: 600;
       border-radius: 8px;
       transition: all 0.3s var(--ease-out-expo);
@@ -168,9 +119,22 @@
       background: #2a2a2a;
     }
 
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+      transition-duration: 0.1s;
+    }
+
+    .btn-primary:active {
+      box-shadow: 0 1px 4px rgba(255, 22, 85, 0.15);
+    }
+
     .btn-large {
       padding: 18px 40px;
-      font-size: 17px;
+      font-size: 1.0625rem;
     }
 
     /* ========== PROGRESS BAR ========== */
@@ -203,19 +167,6 @@
       padding: 12px 0;
     }
 
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 18px;
-    }
 
     .nav-logo-icon {
       width: 36px;
@@ -227,35 +178,33 @@
       justify-content: center;
       color: white;
       font-weight: 800;
-      font-size: 20px;
+      font-size: 1.25rem;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
+    .nav a:not(.btn) {
+      position: relative;
     }
 
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--sub);
-      transition: color 0.2s;
+    .nav a:not(.btn)::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 1.5px;
+      background: var(--ink);
+      transition: width 0.3s var(--ease-out-expo), left 0.3s var(--ease-out-expo);
     }
 
-    .nav-links a:hover {
-      color: var(--ink);
+    .nav a:not(.btn):hover::after {
+      width: 100%;
+      left: 0;
     }
 
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
 
     .nav-cta .btn {
       padding: 10px 20px;
-      font-size: 14px;
+      font-size: 0.875rem;
     }
 
     /* Mobile menu toggle */
@@ -293,43 +242,9 @@
       transform: translateY(0);
     }
 
-    .sticky-cta-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .sticky-cta-text {
-      color: var(--white);
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    .sticky-cta-text strong {
-      color: var(--red);
-    }
-
-    .sticky-cta-close {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 20px;
-      cursor: pointer;
-      padding: 4px;
-      margin-left: 16px;
-    }
 
     /* ========== HERO SECTION ========== */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 120px 0 80px;
-      position: relative;
-      overflow: hidden;
-    }
+
 
     .hero-blob {
       position: absolute;
@@ -342,11 +257,6 @@
       transition: transform 0.3s ease-out;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-    }
 
     .hero-badge {
       display: inline-flex;
@@ -356,7 +266,7 @@
       background: rgba(255, 22, 85, 0.06);
       border: 1px solid rgba(255, 22, 85, 0.15);
       border-radius: 100px;
-      font-size: 13px;
+      font-size: 0.8125rem;
       font-weight: 600;
       color: var(--red);
       margin-bottom: 24px;
@@ -377,99 +287,20 @@
     }
 
     .hero h1 {
-      font-size: clamp(32px, 4.5vw, 56px);
+      font-size: clamp(2.5rem, 5.5vw, 4.25rem);
       font-weight: 800;
       line-height: 1.05;
       margin-bottom: 24px;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
     }
 
     .hero h1 .highlight {
       color: var(--red);
     }
 
-    .hero-subtitle {
-      font-size: clamp(18px, 2vw, 22px);
-      color: var(--sub);
-      max-width: 600px;
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-
-    .hero-cta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
-
-    .hero-proof {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .hero-avatars {
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-avatars img {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 3px solid var(--white);
-      margin-left: -12px;
-      object-fit: cover;
-    }
-
-    .hero-avatars img:first-child {
-      margin-left: 0;
-    }
-
-    .hero-stats {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .hero-stat {
-      text-align: left;
-    }
-
-    .hero-stat-number {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    }
-
-    .hero-stat-number .counter {
-      font-variant-numeric: tabular-nums;
-    }
-
-    .hero-stat-label {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
-    }
 
     /* ========== HERO VISUAL ========== */
-    .hero-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
 
-    .hero-visual {
-      position: relative;
-      z-index: 1;
-    }
 
     .hero-img-main {
       width: 100%;
@@ -504,20 +335,6 @@
       right: -24px;
     }
 
-    /* ========== LOGOS MARQUEE ========== */
-    .logos-section {
-      padding: 60px 0;
-      background: var(--bg);
-      overflow: hidden;
-    }
-
-    .logos-label {
-      text-align: center;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-bottom: 32px;
-    }
 
     .marquee {
       display: flex;
@@ -557,23 +374,12 @@
       object-fit: contain;
     }
 
-    /* ========== URGENCE SECTION ========== */
-    .urgence-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .urgence-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
 
     .urgence-title {
-      font-size: clamp(32px, 4vw, 48px);
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
       position: sticky;
       top: 120px;
     }
@@ -582,10 +388,6 @@
       color: var(--red);
     }
 
-    .pain-points {
-      display: grid;
-      gap: 24px;
-    }
 
     .pain-card {
       padding: 28px;
@@ -625,65 +427,6 @@
       transform: translateY(-2px);
     }
 
-    .pain-card-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--white);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-
-    .pain-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .pain-card p {
-      font-size: 15px;
-      color: var(--sub);
-      line-height: 1.6;
-    }
-
-    /* ========== BENEFICES SECTION ========== */
-    .benefices-section {
-      padding: 100px 0;
-      background: var(--bg);
-      overflow: hidden;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
-    }
-
-    .section-label {
-      display: inline-block;
-      color: var(--red);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      line-height: 1.2;
-    }
-
-    .benefices-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 80px;
-    }
 
     .benefice-card {
       background: var(--white);
@@ -706,63 +449,9 @@
       transform: translateY(-4px);
     }
 
-    .benefice-number {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      font-size: 48px;
-      font-weight: 800;
-      color: var(--line);
-      line-height: 1;
-    }
-
-    .benefice-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(255, 22, 85, 0.08);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      margin-bottom: 20px;
-      color: var(--red);
-    }
-
-    .benefice-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .benefice-card p {
-      font-size: 15px;
-      color: var(--sub);
-      margin-bottom: 16px;
-      line-height: 1.6;
-    }
-
-    .benefice-result {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--red);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
 
     /* Marquee outils IA */
-    .outils-marquee {
-      margin-top: 60px;
-    }
 
-    .outils-label {
-      text-align: center;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
 
     .outils-track {
       display: flex;
@@ -779,6 +468,12 @@
       background: var(--white);
       border-radius: 100px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.3s, transform 0.3s var(--ease-out-expo);
+    }
+
+    .outil-item:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
     }
 
     .outil-item img {
@@ -788,24 +483,12 @@
     }
 
     .outil-item span {
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 600;
       color: var(--ink);
       white-space: nowrap;
     }
 
-    /* ========== COURS SECTION ========== */
-    .cours-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .cours-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 48px;
-    }
 
     .cours-row {
       display: grid;
@@ -833,53 +516,6 @@
       object-fit: cover;
     }
 
-    .cours-info {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .cours-category {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-    }
-
-    .cours-title {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .cours-desc {
-      font-size: 14px;
-      color: var(--sub);
-    }
-
-    .cours-status {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .status-badge {
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .status-available {
-      background: rgba(255, 22, 85, 0.1);
-      color: var(--red);
-    }
-
-    .status-soon {
-      background: var(--line);
-      color: var(--muted);
-    }
 
     .cours-arrow {
       width: 40px;
@@ -889,33 +525,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s;
+      transition: all 0.4s var(--ease-out-back);
     }
 
     .cours-row:hover .cours-arrow {
       background: var(--red);
       color: var(--white);
-      transform: translateX(4px);
+      transform: translateX(6px) scale(1.05);
     }
 
-    /* ========== PROGRAMME + PRICING ========== */
-    .programme-section {
-      padding: 100px 0;
-      background: var(--bg);
-    }
-
-    .programme-grid {
-      display: grid;
-      grid-template-columns: 1fr 400px;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .programme-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
 
     .programme-item {
       display: flex;
@@ -945,7 +563,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 0.875rem;
       flex-shrink: 0;
     }
 
@@ -954,16 +572,6 @@
       color: var(--muted);
     }
 
-    .programme-content h3 {
-      font-size: 17px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .programme-content p {
-      font-size: 14px;
-      color: var(--sub);
-    }
 
     /* Pricing sticky card */
     .pricing-sticky {
@@ -976,7 +584,7 @@
     }
 
     .pricing-sticky-label {
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -998,7 +606,7 @@
       background: transparent;
       border: none;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 0.875rem;
       font-weight: 600;
       border-radius: 100px;
       cursor: pointer;
@@ -1011,7 +619,7 @@
     }
 
     .pricing-amount {
-      font-size: 56px;
+      font-size: 3.5rem;
       font-weight: 800;
       line-height: 1;
       margin-bottom: 8px;
@@ -1021,13 +629,13 @@
     }
 
     .pricing-amount .currency {
-      font-size: 28px;
+      font-size: 1.75rem;
       font-weight: 600;
       margin-top: 4px;
     }
 
     .pricing-amount .period {
-      font-size: 18px;
+      font-size: 1.125rem;
       font-weight: 500;
       color: var(--muted);
       align-self: flex-end;
@@ -1039,7 +647,7 @@
       padding: 4px 10px;
       background: rgba(255, 22, 85, 0.2);
       color: var(--red);
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: 700;
       border-radius: 100px;
       margin-bottom: 32px;
@@ -1056,7 +664,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 15px;
+      font-size: 0.9375rem;
     }
 
     .pricing-feature::before {
@@ -1068,7 +676,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 0.6875rem;
       flex-shrink: 0;
     }
 
@@ -1077,108 +685,6 @@
       justify-content: center;
     }
 
-    /* ========== COMPARAISON SECTION ========== */
-    .compare-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-    }
-
-    .compare-col {
-      padding: 48px;
-    }
-
-    .compare-col.sans {
-      background: var(--bg);
-    }
-
-    .compare-col.avec {
-      background: var(--ink);
-      color: var(--white);
-    }
-
-    .compare-header {
-      margin-bottom: 40px;
-    }
-
-    .compare-header h3 {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .compare-header p {
-      font-size: 15px;
-      color: var(--sub);
-    }
-
-    .compare-col.avec .compare-header p {
-      color: var(--muted);
-    }
-
-    .compare-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .compare-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 16px;
-    }
-
-    .compare-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-
-    .sans .compare-icon {
-      background: var(--line);
-      color: var(--muted);
-    }
-
-    .avec .compare-icon {
-      background: var(--red);
-      color: var(--white);
-    }
-
-    .compare-cta {
-      text-align: center;
-      margin-top: 48px;
-    }
-
-    /* ========== PRICING PUBLIC SECTION ========== */
-    .pricing-public-section {
-      padding: 100px 0;
-      background: var(--bg);
-    }
-
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 800px;
-      margin: 48px auto 0;
-    }
 
     .pricing-card {
       background: var(--white);
@@ -1222,19 +728,19 @@
       padding: 6px 16px;
       background: var(--red);
       color: var(--white);
-      font-size: 12px;
+      font-size: 0.75rem;
       font-weight: 700;
       border-radius: 100px;
     }
 
     .pricing-card h3 {
-      font-size: 20px;
+      font-size: 1.25rem;
       font-weight: 700;
       margin-bottom: 24px;
     }
 
     .pricing-card .price {
-      font-size: 48px;
+      font-size: 3rem;
       font-weight: 800;
       margin-bottom: 24px;
       display: flex;
@@ -1243,13 +749,13 @@
     }
 
     .pricing-card .price .currency {
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 600;
       margin-top: 4px;
     }
 
     .pricing-card .price .period {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 500;
       color: var(--muted);
       align-self: flex-end;
@@ -1267,7 +773,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 15px;
+      font-size: 0.9375rem;
       color: var(--sub);
     }
 
@@ -1282,18 +788,6 @@
       justify-content: center;
     }
 
-    /* ========== TEMOIGNAGES SECTION ========== */
-    .temoignages-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .temoignages-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 48px;
-    }
 
     .temoignage-card {
       background: var(--bg);
@@ -1315,28 +809,6 @@
       transform: translateY(-4px);
     }
 
-    .stars {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 20px;
-      color: #ffb800;
-      font-size: 18px;
-    }
-
-    .temoignage-quote {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-
-    .temoignage-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
 
     .temoignage-avatar {
       width: 44px;
@@ -1348,7 +820,7 @@
       justify-content: center;
       color: var(--white);
       font-weight: 700;
-      font-size: 16px;
+      font-size: 1rem;
       overflow: hidden;
       flex-shrink: 0;
     }
@@ -1360,142 +832,6 @@
       object-position: top;
     }
 
-    .temoignage-info h4 {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-
-    .temoignage-info p {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    /* ========== FORMATRICE SECTION ========== */
-    .formatrice-section {
-      padding: 100px 0;
-      background: var(--cream);
-    }
-
-    .formatrice-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-
-    .formatrice-content h2 {
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 24px;
-    }
-
-    .formatrice-content h2 .serif {
-      color: var(--red);
-    }
-
-    .formatrice-bio {
-      font-size: 17px;
-      color: var(--sub);
-      line-height: 1.8;
-      margin-bottom: 32px;
-    }
-
-    .formatrice-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .formatrice-tag {
-      padding: 8px 16px;
-      background: var(--white);
-      border-radius: 100px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--ink);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    }
-
-    .formatrice-card {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    }
-
-    .formatrice-avatar-large {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: var(--ink);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 48px;
-      font-weight: 700;
-      margin: 0 auto 24px;
-      overflow: hidden;
-    }
-
-    .formatrice-avatar-large img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-    }
-
-    .formatrice-quote {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-size: 22px;
-      text-align: center;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      color: var(--ink);
-    }
-
-    .formatrice-credentials {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-    }
-
-    .credential {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--sub);
-    }
-
-    .credential-icon {
-      width: 32px;
-      height: 32px;
-      background: var(--bg);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-
-    /* ========== FAQ SECTION ========== */
-    .faq-section {
-      padding: 100px 0;
-      background: var(--white);
-    }
-
-    .faq-grid {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 80px;
-      align-items: start;
-    }
 
     .faq-title-sticky {
       position: sticky;
@@ -1503,22 +839,18 @@
     }
 
     .faq-title-sticky h2 {
-      font-size: clamp(28px, 4vw, 40px);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
       font-weight: 800;
       line-height: 1.2;
-      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
     }
 
     .faq-title-sticky p {
-      font-size: 16px;
+      font-size: 1rem;
       color: var(--sub);
     }
 
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
 
     .faq-item {
       border: 1px solid var(--line);
@@ -1546,7 +878,7 @@
       width: 100%;
       text-align: left;
       font-family: inherit;
-      font-size: 17px;
+      font-size: 1.0625rem;
       font-weight: 600;
       color: var(--ink);
     }
@@ -1559,7 +891,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 1.25rem;
       transition: all 0.3s var(--ease-out-back);
       flex-shrink: 0;
     }
@@ -1587,18 +919,12 @@
     }
 
     .faq-answer p {
-      font-size: 15px;
+      font-size: 0.9375rem;
       color: var(--sub);
       line-height: 1.7;
+      max-width: 65ch;
     }
 
-    /* ========== CTA FINAL SECTION ========== */
-    .cta-final-section {
-      padding: 120px 0;
-      background: var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
 
     .cta-blob {
       position: absolute;
@@ -1613,26 +939,23 @@
       pointer-events: none;
     }
 
-    .cta-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
 
     .cta-content h2 {
-      font-size: clamp(36px, 5vw, 56px);
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
       font-weight: 800;
       color: var(--white);
       line-height: 1.1;
+      letter-spacing: -0.02em;
       margin-bottom: 24px;
     }
 
     .cta-content p {
-      font-size: 20px;
+      font-size: 1.25rem;
       color: var(--muted);
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
+      max-width: 50ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .cta-meta {
@@ -1641,7 +964,7 @@
       justify-content: center;
       gap: 24px;
       margin-top: 48px;
-      font-size: 14px;
+      font-size: 0.875rem;
       color: var(--muted);
     }
 
@@ -1654,51 +977,9 @@
     .cta-meta span::before {
       content: '•';
       color: var(--red);
-      font-size: 20px;
+      font-size: 1.25rem;
     }
 
-    /* ========== FOOTER ========== */
-    .footer {
-      padding: 60px 0 100px;
-      background: var(--ink);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 20px;
-      color: var(--white);
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 32px;
-    }
-
-    .footer-links a {
-      font-size: 14px;
-      color: var(--muted);
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--white);
-    }
-
-    .footer-copy {
-      font-size: 13px;
-      color: var(--muted);
-    }
 
     /* ========== SCROLL REVEAL ANIMATIONS ========== */
     /* Base state - hidden below */
@@ -1818,22 +1099,6 @@
 
     /* ========== RESPONSIVE ========== */
     @media (max-width: 1024px) {
-      .urgence-grid,
-      .programme-grid,
-      .formatrice-grid,
-      .faq-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-      }
-
-      .benefices-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .temoignages-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
       .urgence-title,
       .faq-title-sticky {
         position: relative;
@@ -1859,38 +1124,6 @@
         display: flex;
       }
 
-      .hero {
-        padding: 100px 0 60px;
-      }
-
-      .hero-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-visual {
-        display: none;
-      }
-
-      .hero-cta {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero-proof {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .benefices-grid,
-      .temoignages-grid,
-      .compare-grid,
-      .pricing-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .compare-col {
-        padding: 32px 24px;
-      }
 
       .cours-row {
         grid-template-columns: 80px 1fr;
@@ -1921,10 +1154,7 @@
         text-align: center;
       }
 
-      .cta-meta {
-        flex-direction: column;
-        gap: 12px;
-      }
+
     }
 
     /* ========== MOBILE MENU ========== */
@@ -1953,13 +1183,13 @@
       right: 20px;
       background: none;
       border: none;
-      font-size: 32px;
+      font-size: 2rem;
       cursor: pointer;
     }
 
     .mobile-menu a {
       padding: 20px 0;
-      font-size: 24px;
+      font-size: 1.5rem;
       font-weight: 700;
       border-bottom: 1px solid var(--line);
     }

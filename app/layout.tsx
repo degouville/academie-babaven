@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 import ClientEffects from './components/ClientEffects'
 import SplashScreen from './components/SplashScreen'
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <ClientEffects />
         <Script src="https://unpkg.com/lucide@latest" strategy="afterInteractive" />
+        <Analytics />
       </body>
     </html>
   )

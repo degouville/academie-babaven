@@ -929,7 +929,7 @@ export default function Home() {
               <div className="nav-logo-icon">B</div>
               <span>Babaven. Académie</span>
             </a>
-            <div className="flex gap-8 flex-wrap justify-center">
+            <div className="flex gap-8 flex-wrap justify-center text-white/70">
               <a href="#benefices">Bénéfices</a>
               <a href="#cours">Cours</a>
               <a href="#tarifs">Tarifs</a>
@@ -939,7 +939,7 @@ export default function Home() {
               <a href="mailto:blogbabaven@gmail.com">Contact</a>
               <a href="#">Mentions légales</a>
             </div>
-            <p className="text-[13px] text-muted">© 2025 Babaven Académie · Martinique 🌴</p>
+            <p className="text-[13px] text-white/40">© 2025 Babaven Académie · Martinique 🌴</p>
           </div>
         </div>
       </footer>

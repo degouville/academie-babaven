@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import './globals.css'
 import ClientEffects from './components/ClientEffects'
+import SplashScreen from './components/SplashScreen'
 
 export const metadata: Metadata = {
   title: "Babaven Académie — Fais en 1 heure ce qui te prenait 1 journée",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <SplashScreen />
         {children}
         <ClientEffects />
         <Script src="https://unpkg.com/lucide@latest" strategy="afterInteractive" />

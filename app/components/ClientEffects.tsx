@@ -107,7 +107,9 @@ export default function ClientEffects() {
     animateBlob()
 
     // ========== SCROLL REVEAL ==========
-    const rvElements = document.querySelectorAll('.rv, .rv-from-bottom, .rv-from-left, .rv-from-right, .rv-scale, .rv-blur')
+    const RV_CLASSES = ['rv','rv-from-bottom','rv-from-left','rv-from-right','rv-scale','rv-blur','rv-clip','rv-clip-left','rv-clip-right','rv-clip-circle','rv-clip-rise']
+    const rvSelector = RV_CLASSES.map(c => '.' + c).join(', ')
+    const rvElements = document.querySelectorAll(rvSelector)
 
     const rvObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -116,7 +118,7 @@ export default function ClientEffects() {
         const parent = el.parentElement
         if (parent) {
           const siblings = Array.from(parent.children).filter(c =>
-            ['rv','rv-from-bottom','rv-from-left','rv-from-right','rv-scale','rv-blur'].some(cls => c.classList.contains(cls))
+            RV_CLASSES.some(cls => c.classList.contains(cls))
           )
           const delay = siblings.indexOf(el) * 80
           setTimeout(() => el.classList.add('visible'), delay)
@@ -167,6 +169,18 @@ export default function ClientEffects() {
           const save = document.getElementById('stickySave')
           if (save) save.style.opacity = isYearly ? '1' : '0'
         })
+      })
+    })
+
+    // ========== FORMATEUR TABS ==========
+    document.querySelectorAll('.formateur-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const id = (tab as HTMLElement).dataset.formateur
+        document.querySelectorAll('.formateur-tab').forEach(t => t.classList.remove('active'))
+        tab.classList.add('active')
+        document.querySelectorAll('.formateur-panel').forEach(p => p.classList.remove('active'))
+        const sel = `.formateur-panel[data-formateur="${id}"]`
+        document.querySelector(sel)?.classList.add('active')
       })
     })
 
